@@ -1,0 +1,67 @@
+.task {
+  display: grid;
+  grid-template-areas:
+    "task-name task-status"
+    "due-date task-menu";
+  gap: 1rem;
+  padding: 1em;
+  border-radius: 0.5rem;
+}
+
+.task__due_date {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.task__menu {
+  cursor: pointer;
+  display: flex;
+  border: none;
+  background: transparent;
+  padding: 0.25em;
+  border-radius: 0.25rem;
+  margin-left: auto;
+}
+
+.task__menu:is(:hover, :focus) {
+  background: hsl(var(--clr-neutral-700), 0.1);
+}
+
+.task__status {
+  display: inline-block;
+  width: 6rem;
+  text-align: center;
+  background-color: hsl(var(--clr-secondary-400));
+  color: hsl(var(--clr-neutral-900));
+  font-weight: var(--fw-semi-bold);
+  font-size: 0.8125rem;
+  padding: 0.25em 0.75em;
+  border-radius: 0.25rem;
+  margin-left: auto;
+}
+
+.task_status {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (width>=560px) {
+  .task {
+    grid-template-areas: "task-name task-status due-date task-menu";
+    align-items: center;
+  }
+
+  .task__status {
+    margin-inline: auto;
+  }
+
+  .task_status {
+    display: flex;
+    justify-content: center;
+  }
+
+  .task__due_date {
+    justify-content: center;
+  }
+}

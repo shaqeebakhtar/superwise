@@ -1,0 +1,30 @@
+.project__tabs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1.5px solid hsl(var(--clr-neutral-900), 0.1);
+}
+
+.tab {
+  cursor: pointer;
+  padding: 0.5em 0.25em;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body-sm);
+  color: hsl(var(--clr-neutral-700));
+}
+
+.tab.current {
+  color: hsl(var(--clr-primary-400));
+  font-weight: var(--fw-semi-bold);
+  border-bottom: 2.5px solid hsl(var(--clr-primary-400));
+}
+
+.project_progress {
+  padding: 2em 0;
+}
+
+.all_tasks {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5em 0;
+}

@@ -1,0 +1,121 @@
+.clients {
+  padding: 3em 1.5em;
+}
+
+.clients__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-bottom: 1.5em;
+  border-bottom: 1.5px solid hsl(var(--clr-neutral-900), 0.1);
+}
+
+.all_clients {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5em 0;
+}
+
+@media (width>=560px) {
+  .clients__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.client_organization {
+  padding: 1em;
+  border-radius: 0.5rem;
+}
+
+.organization {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.organization__logo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.org_btn {
+  gap: 0.25rem;
+  padding: 0.375em 0.5em;
+}
+
+.organization__menu {
+  cursor: pointer;
+  display: flex;
+  border: none;
+  background: transparent;
+  padding: 0.25em;
+  border-radius: 0.25rem;
+}
+
+.organization__menu:is(:hover, :focus) {
+  background: hsl(var(--clr-neutral-700), 0.1);
+}
+
+@media (width>=560px) {
+  .organization {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.contacts {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1em;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn__invite {
+  cursor: pointer;
+  border: 1.5px solid hsl(var(--clr-neutral-900), 0.1);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375em 0.5em;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semi-bold);
+  background-color: hsl(var(--clr-neutral-500), 0.25);
+  color: hsl(var(--clr-neutral-700));
+}
+
+.btn__invite:is(:hover, :focus) {
+  background-color: hsl(var(--clr-neutral-500), 0.5);
+}
+
+.contact__menu {
+  cursor: pointer;
+  display: flex;
+  border: none;
+  background: transparent;
+  padding: 0.25em;
+  border-radius: 0.25rem;
+}
+
+.contact__menu:is(:hover, :focus) {
+  background: hsl(var(--clr-neutral-700), 0.1);
+}
+
+@media (width>=560px) {
+  .contacts {
+    margin-left: 2.5em;
+  }
+}
