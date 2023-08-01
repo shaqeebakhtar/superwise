@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "@/app/styles/projects.module.css";
-import Project from "@/app/components/projects/project";
-import NewProject from "@/app/components/popups/projects/project/new-project";
-import EmptyState from "@/app/components/empty-state/empty-state";
-import Navbar from "@/app/components/navbar/navbar";
+import styles from "@/styles/projects.module.css";
+import Project from "@/components/projects/project";
+import NewProject from "@/components/popups/projects/project/new-project";
+import EmptyState from "@/components/empty-state/empty-state";
+import Navbar from "@/components/navbar/navbar";
 import Image from "next/image";
 import { Project as IProject } from "@/app/types/projects";
 

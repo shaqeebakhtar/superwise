@@ -1,0 +1,39 @@
+.authWrapper {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0 1.5em;
+}
+
+.auth {
+  width: 100%;
+  max-width: 25rem;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 24px 0 hsl(0, 0%, 80%, 0.125);
+}
+
+.input_field label {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.input_field input[type="password"],
+.input_field input[type="text"],
+.input_field input[type="email"] {
+  font-size: var(--fs-body-sm);
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  outline: 1.5px solid hsl(var(--clr-neutral-700), 0.25);
+  border-radius: 0.25rem;
+}
+
+.input_field input:focus {
+  outline: 2px solid hsl(var(--clr-primary-400));
+}
+
+.input_field input::placeholder {
+  color: hsl(var(--clr-neutral-500));
+}

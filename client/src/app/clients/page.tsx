@@ -1,10 +1,10 @@
 "use client";
 
-import ClientOrganization from "@/app/components/clients/client";
-import EmptyState from "@/app/components/empty-state/empty-state";
-import Navbar from "@/app/components/navbar/navbar";
-import NewClientOrganization from "@/app/components/popups/clients/client/new-client";
-import styles from "@/app/styles/clients.module.css";
+import ClientOrganization from "@/components/clients/client";
+import EmptyState from "@/components/empty-state/empty-state";
+import Navbar from "@/components/navbar/navbar";
+import NewClientOrganization from "@/components/popups/clients/client/new-client";
+import styles from "@/styles/clients.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Client } from "../types/clients";

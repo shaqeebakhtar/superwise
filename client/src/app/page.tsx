@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/app/styles/home.module.css";
+import styles from "@/styles/home.module.css";
 import Link from "next/link";
 
 const Home = () => {
@@ -17,9 +17,14 @@ const Home = () => {
             />
           </Link>
         </div>
-        <Link href={`/projects`} className={styles.btn__get_started}>
-          Get Started
-        </Link>
+        <div className="flex">
+          <Link href={`/login`} className={styles.btn__login}>
+            Login
+          </Link>
+          <Link href={`/signup`} className={`${styles.btn__signup} ml-1`}>
+            Sign Up
+          </Link>
+        </div>
       </header>
       <div className={`${styles.hero} container`}>
         <div className={`${styles.hero__body} gap`}>
@@ -32,7 +37,7 @@ const Home = () => {
             client projects with SuperWise while giving clients a more
             personalized and professional experience.
           </p>
-          <Link href={`/projects`} className={styles.btn__cta}>
+          <Link href={`/signup`} className={styles.btn__cta}>
             Build your client portal
           </Link>
         </div>

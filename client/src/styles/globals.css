@@ -1,0 +1,462 @@
+:root {
+  --clr-primary-400: 238, 71%, 64%;
+  --clr-secondary-400: 52, 100%, 62%;
+
+  --clr-neutral-100: 0, 0%, 100%;
+  --clr-neutral-200: 28, 100%, 97%;
+  --clr-neutral-500: 0, 0%, 67%;
+  --clr-neutral-700: 220, 9%, 46%;
+  --clr-neutral-900: 255, 19%, 13%;
+
+  --ff-primary: "Inter", sans-serif;
+  --ff-heading: var(--ff-primary);
+  --ff-body: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-200: 0.8125rem;
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 2.5rem;
+
+  --fs-title-lg: var(--fs-800);
+  --fs-title: var(--fs-600);
+  --fs-body-lg: var(--fs-500);
+  --fs-body: var(--fs-400);
+  --fs-body-sm: var(--fs-200);
+  --fs-body-x-sm: var(--fs-200);
+}
+
+@media (width >= 35em) {
+  :root {
+    --fs-title-lg: var(--fs-900);
+    --fs-title: var(--fs-700);
+    --fs-body-lg: var(--fs-500);
+    --fs-body: var(--fs-400);
+    --fs-body-sm: var(--fs-300);
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ----- Utility Classes ----- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  --max-width: 1120px;
+  --padding: 1.5rem;
+
+  width: min(var(--max-width), 100% - var(--padding));
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.box-shadow {
+  box-shadow: 0px 2px 32px hsl(var(--clr-neutral-900), 0.1);
+}
+
+.mtb-2 {
+  margin: 1em 0 1.75em;
+}
+
+.mt-1 {
+  margin: 1em 0 0;
+}
+
+.ml-1 {
+  margin-left: 0.75em;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.gap-x-sm > * + * {
+  margin-top: 0.25rem;
+}
+
+.gap-sm > * + * {
+  margin-top: 0.5rem;
+}
+
+.gap > * + * {
+  margin-top: 0.75rem;
+}
+
+.gap-lg > * + * {
+  margin-top: 1rem;
+}
+
+/* text color */
+
+.text-primary-400 {
+  color: hsl(var(--clr-primary-400));
+}
+
+.text-secondary-400 {
+  color: hsl(var(--clr-secondary-400));
+}
+
+.text-neutral-100 {
+  color: hsl(var(--clr-neutral-100));
+}
+
+.text-neutral-200 {
+  color: hsl(var(--clr-neutral-200));
+}
+
+.text-neutral-500 {
+  color: hsl(var(--clr-neutral-500));
+}
+
+.text-neutral-700 {
+  color: hsl(var(--clr-neutral-700));
+}
+
+.text-neutral-900 {
+  color: hsl(var(--clr-neutral-900));
+}
+
+/* background color */
+
+.bg-primary-400 {
+  background-color: hsl(var(--clr-primary-400));
+}
+
+.bg-secondary-400 {
+  background-color: hsl(var(--clr-secondary-400));
+}
+
+.bg-neutral-100 {
+  background-color: hsl(var(--clr-neutral-100));
+}
+
+.bg-neutral-200 {
+  background-color: hsl(var(--clr-neutral-200));
+}
+
+.bg-neutral-500 {
+  background-color: hsl(var(--clr-neutral-500));
+}
+
+.bg-neutral-700 {
+  background-color: hsl(var(--clr-neutral-700));
+}
+
+.bg-neutral-900 {
+  background-color: hsl(var(--clr-neutral-900));
+}
+
+/* font weight */
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+/* font sizes */
+
+.fs-title-lg {
+  font-size: var(--fs-title-lg);
+  line-height: 1.1;
+}
+
+.fs-title {
+  font-size: var(--fs-title);
+  line-height: 1.1;
+}
+
+.fs-body-lg {
+  font-size: var(--fs-body-lg);
+}
+
+.fs-body {
+  font-size: var(--fs-body);
+}
+
+.fs-body-sm {
+  font-size: var(--fs-body-sm);
+}
+
+.fs-body-x-sm {
+  font-size: var(--fs-body-x-sm);
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  background-color: hsl(var(--clr-neutral-200));
+  color: hsl(var(--clr-neutral-900));
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--clr-primary-400), 0.75);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: hsl(var(--clr-neutral-500), 0.75);
+}
+
+main {
+  margin-left: 0;
+}
+
+@media (width >= 560px) {
+  main {
+    margin-left: 3.85rem;
+  }
+}
+
+body.popup-active {
+  overflow: hidden;
+}
+
+.popup-backdrop {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.popup {
+  width: 95%;
+  max-width: 24rem;
+  background-color: hsl(var(--clr-neutral-100));
+  border-radius: 0.5rem;
+  padding: 1.5em;
+  margin: 0 1.5em;
+}
+
+@media (width>=560px) {
+  .popup {
+    max-width: 30rem;
+    padding: 2em;
+  }
+}
+
+.btn--add {
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--clr-primary-400));
+  color: hsl(var(--clr-neutral-100));
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-body-sm);
+  transition: all 150ms ease-in-out;
+}
+
+.btn--add:is(:hover, :focus) {
+  background-color: hsl(var(--clr-primary-400), 0.75);
+}
+
+.btn--cancel {
+  cursor: pointer;
+  border: none;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--clr-neutral-500));
+  color: hsl(var(--clr-neutral-100));
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-body-sm);
+  transition: all 150ms ease-in-out;
+}
+
+.btn--cancel:is(:hover, :focus) {
+  background-color: hsl(var(--clr-neutral-500), 0.75);
+}
+
+.btn--upload {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--clr-primary-400));
+  color: hsl(var(--clr-neutral-100));
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-body-sm);
+  transition: all 150ms ease-in-out;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  z-index: 999;
+  list-style: none;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semi-bold);
+  background-color: hsl(var(--clr-neutral-900));
+  color: hsl(var(--clr-neutral-700));
+  padding: 0.5em;
+  border-radius: 0.25rem;
+}
+
+.menu-item {
+  cursor: pointer;
+  width: 7.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5em;
+  border-radius: 0.25rem;
+}
+
+.menu-item:hover {
+  background-color: hsl(var(--clr-neutral-500), 0.1);
+}
+
+.dropdown-menu.product-page-dropdown {
+  background-color: hsl(var(--clr-neutral-100));
+}
+
+.dropdown-menu.product-page-dropdown .menu-item {
+  width: 11rem;
+}
+
+.dropdown-menu.product-page-dropdown .menu-item:hover {
+  background-color: hsl(var(--clr-neutral-900), 0.1);
+}
+
+.status {
+  display: inline-block;
+  font-weight: var(--fw-semi-bold);
+  font-size: 0.8125rem;
+  padding: 0.25em 0.75em;
+  border-radius: 0.25rem;
+}
+
+.status.not-started {
+  background-color: hsl(var(--clr-neutral-500));
+  color: hsl(var(--clr-neutral-900));
+}
+
+.status.completed {
+  background-color: hsl(var(--clr-primary-400));
+  color: hsl(var(--clr-neutral-100));
+}
+
+.status.in-progress {
+  background-color: hsl(var(--clr-secondary-400));
+  color: hsl(var(--clr-neutral-900));
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  height: min(40vh, 25rem);
+  padding: 0 0 1em;
+}

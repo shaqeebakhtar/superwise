@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
-import Discussion from "@/app/components/projects/tabs/discussion/discussion";
-import Documents from "@/app/components/projects/tabs/documents/documents";
-import Navbar from "@/app/components/navbar/navbar";
-import EditProject from "@/app/components/popups/projects/project/edit-project";
-import ProjectProgress from "@/app/components/projects/tabs/project-progress/project-progress";
-import Status from "@/app/components/statuses/status";
-import styles from "@/app/styles/projects.module.css";
+import Discussion from "@/components/projects/tabs/discussion/discussion";
+import Documents from "@/components/projects/tabs/documents/documents";
+import Navbar from "@/components/navbar/navbar";
+import EditProject from "@/components/popups/projects/project/edit-project";
+import ProjectProgress from "@/components/projects/tabs/project-progress/project-progress";
+import Status from "@/components/statuses/status";
+import styles from "@/styles/projects.module.css";
 import { Project } from "@/app/types/projects";
 
 const ProjectPage = () => {
