@@ -6,7 +6,8 @@ import express, { type Express } from "express";
 import http from "http";
 import cors from "cors";
 import { json } from "body-parser";
-import { typeDefs, resolvers } from "./graphql";
+import typeDefs from "./graphql/typeDefs";
+import resolvers from "./graphql/resolvers";
 
 interface MyContext {
   token?: String;
