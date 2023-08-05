@@ -1,11 +1,17 @@
+"use client";
+
 import styles from "@/styles/auth.module.css";
 import Link from "next/link";
 
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
 const Signup = (props: Props) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className={styles.authWrapper}>
       <div className={styles.auth}>
@@ -19,8 +25,8 @@ const Signup = (props: Props) => {
               type="text"
               id="name"
               placeholder="Full Name"
-              //   value={clientName}
-              //   onChange={(e) => setClientName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className={styles.input_field}>
@@ -31,8 +37,8 @@ const Signup = (props: Props) => {
               type="email"
               id="email"
               placeholder="Email"
-              //   value={clientName}
-              //   onChange={(e) => setClientName(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className={styles.input_field}>
@@ -43,8 +49,8 @@ const Signup = (props: Props) => {
               type="password"
               id="password"
               placeholder="Password"
-              //   value={clientName}
-              //   onChange={(e) => setClientName(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
         </div>

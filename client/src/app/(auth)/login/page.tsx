@@ -1,11 +1,14 @@
 import styles from "@/styles/auth.module.css";
 import Link from "next/link";
 
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
 const Login = (props: Props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className={styles.authWrapper}>
       <div className={styles.auth}>
@@ -19,8 +22,8 @@ const Login = (props: Props) => {
               type="email"
               id="email"
               placeholder="Email"
-              //   value={clientName}
-              //   onChange={(e) => setClientName(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className={styles.input_field}>
@@ -31,8 +34,8 @@ const Login = (props: Props) => {
               type="password"
               id="password"
               placeholder="Password"
-              //   value={clientName}
-              //   onChange={(e) => setClientName(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
         </div>
