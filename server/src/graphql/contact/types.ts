@@ -8,7 +8,7 @@ type Contact{
 }
 
 type Query{
-    getContacts: [Contact]!
+    getContacts(clientId: String!): [Contact]!
 
     getContact(contactId: String!): Contact!
 }
