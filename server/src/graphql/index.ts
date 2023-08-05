@@ -3,6 +3,7 @@ import { contactMutation, contactQuery, contactTypes } from "./contact";
 import { projectMutation, projectQuery, projectTypes } from "./project";
 import { taskMutation, taskQuery, taskTypes } from "./task";
 import { documentMutation, documentQuery, documentTypes } from "./document";
+import { authMutation, authTypes } from "./auth";
 
 export const typeDefs = `
     ${clientTypes}
@@ -10,6 +11,7 @@ export const typeDefs = `
     ${projectTypes}
     ${taskTypes}
     ${documentTypes}
+    ${authTypes}
 `;
 
 export const resolvers = {
@@ -27,5 +29,6 @@ export const resolvers = {
     ...projectMutation,
     ...taskMutation,
     ...documentMutation,
+    ...authMutation,
   },
 };
