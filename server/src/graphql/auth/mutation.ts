@@ -1,7 +1,7 @@
 import prisma from "../../db";
 import hashService from "../../services/hash-service";
 
-const registerResolver = {
+export const authMutation = {
   register: async (obj: any, args: any, context: any, info: any) => {
     const { name, email, password } = args;
 
@@ -18,5 +18,3 @@ const registerResolver = {
     return user;
   },
 };
-
-export default registerResolver;
