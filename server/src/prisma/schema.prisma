@@ -8,24 +8,28 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  email    String @unique
+  id       String    @id @default(uuid())
+  email    String    @unique
   name     String
   password String
+  projects Project[]
+  clients  Client[]
 }
 
 model Client {
   id           String    @id @default(uuid())
   organization String
   contacts     Contact[]
-  Project      Project[]
+  project      Project[]
+  user         User      @relation(fields: [userId], references: [id])
+  userId       String
 }
 
 model Contact {
   id       String  @id @default(uuid())
   name     String
   email    String
-  Client   Client? @relation(fields: [clientId], references: [id])
+  client   Client? @relation(fields: [clientId], references: [id])
   clientId String?
 }
 
@@ -36,10 +40,12 @@ model Project {
   projectStatus      String
   startDate          String
   endDate            String
-  Tasks              Task[]
-  Documents          Document[]
+  tasks              Task[]
+  documents          Document[]
   clientName         Client     @relation(fields: [clientId], references: [id])
   clientId           String
+  user               User       @relation(fields: [userId], references: [id])
+  userId             String
 }
 
 model Task {
@@ -47,7 +53,7 @@ model Task {
   taskName   String
   taskStatus String
   dueDate    String
-  Project    Project? @relation(fields: [projectId], references: [id])
+  project    Project? @relation(fields: [projectId], references: [id])
   projectId  String?
 }
 
@@ -55,6 +61,6 @@ model Document {
   id        String   @id @default(uuid())
   docUrl    String
   docName   String
-  Project   Project? @relation(fields: [projectId], references: [id])
+  project   Project? @relation(fields: [projectId], references: [id])
   projectId String?
 }
