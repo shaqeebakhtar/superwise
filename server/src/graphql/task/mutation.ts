@@ -1,7 +1,5 @@
-import prisma from "../../db";
-
 export const taskMutation = {
-  addTask: async (obj: any, args: any, context: any, info: any) => {
+  addTask: async (obj: any, args: any, { prisma }: any, info: any) => {
     const { taskName, taskStatus, dueDate, projectId } = args;
 
     const task = await prisma.task.create({
@@ -16,7 +14,7 @@ export const taskMutation = {
     return task;
   },
 
-  updateTask: async (obj: any, args: any, context: any, info: any) => {
+  updateTask: async (obj: any, args: any, { prisma }: any, info: any) => {
     const { taskName, taskStatus, dueDate, taskId } = args;
 
     const task = await prisma.task.update({

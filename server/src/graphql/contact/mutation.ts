@@ -1,7 +1,5 @@
-import prisma from "../../db";
-
 export const contactMutation = {
-  addContact: async (obj: any, args: any, context: any, info: any) => {
+  addContact: async (obj: any, args: any, { prisma }: any, info: any) => {
     const { name, email, clientId } = args;
 
     const contact = await prisma.contact.create({
@@ -15,7 +13,7 @@ export const contactMutation = {
     return contact;
   },
 
-  updateContact: async (obj: any, args: any, context: any, info: any) => {
+  updateContact: async (obj: any, args: any, { prisma }: any, info: any) => {
     const { name, email, contactId } = args;
 
     const contact = await prisma.contact.update({

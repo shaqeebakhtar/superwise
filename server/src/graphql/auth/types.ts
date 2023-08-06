@@ -1,5 +1,7 @@
 export const authTypes = `#graphql
 
+    scalar void
+
     type User{
         id: String
         name: String
@@ -8,6 +10,10 @@ export const authTypes = `#graphql
 
     type Mutation{
         register(name: String!, email: String!, password: String!): User!
+
+        login(email: String!, password: String!): User
+
+        logout: User
     }
 
 `;

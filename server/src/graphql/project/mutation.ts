@@ -1,7 +1,7 @@
-import prisma from "../../db";
+import { GraphQLError } from "graphql";
 
 export const projectMutation = {
-  addProject: async (obj: any, args: any, context: any, info: any) => {
+  addProject: async (obj: any, args: any, { user, prisma }: any, info: any) => {
     const {
       projectName,
       projectDescription,
@@ -10,6 +10,14 @@ export const projectMutation = {
       endDate,
       clientId,
     } = args;
+
+    if (!user)
+      throw new GraphQLError("You must be logged in", {
+        extensions: {
+          code: "FORBIDDEN",
+          http: { status: 403 },
+        },
+      });
 
     const project = await prisma.project.create({
       data: {
@@ -28,7 +36,7 @@ export const projectMutation = {
     return project;
   },
 
-  updateProject: async (obj: any, args: any, context: any, info: any) => {
+  updateProject: async (obj: any, args: any, { prisma }: any, info: any) => {
     const {
       projectName,
       projectDescription,

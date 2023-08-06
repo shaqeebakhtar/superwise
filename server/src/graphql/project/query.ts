@@ -1,7 +1,5 @@
-import prisma from "../../db";
-
 export const projectQuery = {
-  getProjects: async () =>
+  getProjects: async (obj: any, args: any, { prisma }: any, info: any) =>
     await prisma.project.findMany({
       include: {
         Tasks: true,
@@ -9,7 +7,12 @@ export const projectQuery = {
       },
     }),
 
-  getProject: async (obj: any, { projectId }: any, context: any, info: any) => {
+  getProject: async (
+    obj: any,
+    { projectId }: any,
+    { prisma }: any,
+    info: any
+  ) => {
     const project = await prisma.project.findUnique({
       where: {
         id: projectId,

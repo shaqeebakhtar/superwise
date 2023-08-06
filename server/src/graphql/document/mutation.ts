@@ -1,7 +1,5 @@
-import prisma from "../../db";
-
 export const documentMutation = {
-  addDocument: async (obj: any, args: any, context: any, info: any) => {
+  addDocument: async (obj: any, args: any, { prisma }: any, info: any) => {
     const { docName, docUrl, projectId } = args;
 
     const task = await prisma.document.create({
@@ -15,7 +13,7 @@ export const documentMutation = {
     return task;
   },
 
-  updateDocument: async (obj: any, args: any, context: any, info: any) => {
+  updateDocument: async (obj: any, args: any, { prisma }: any, info: any) => {
     const { docName, docUrl, documentId } = args;
 
     const task = await prisma.document.update({
