@@ -21,7 +21,11 @@ export const authMutation = {
       },
     });
 
-    const accessToken = await tokenService.generateTokens(user);
+    const accessToken = await tokenService.generateTokens({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    });
 
     res.cookie("accessToken", accessToken, {
       maxAge: 1000 * 60 * 60 * 24, // 1 day
@@ -53,7 +57,11 @@ export const authMutation = {
         },
       });
 
-    const accessToken = await tokenService.generateTokens(user);
+    const accessToken = await tokenService.generateTokens({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    });
 
     res.cookie("accessToken", accessToken, {
       maxAge: 1000 * 60 * 60 * 24, // 1 day

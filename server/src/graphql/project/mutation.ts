@@ -27,6 +27,7 @@ export const projectMutation = {
         startDate,
         endDate,
         clientId,
+        creatorId: user.id,
       },
       include: {
         clientName: true,

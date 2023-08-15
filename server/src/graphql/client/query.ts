@@ -1,11 +1,24 @@
+import { GraphQLError } from "graphql";
+
 export const clientQuery = {
-  getClients: async (obj: any, args: any, { prisma }: any, info: any) =>
-    await prisma.client.findMany({
+  getClients: async (obj: any, args: any, { user, prisma }: any, info: any) => {
+    if (!user)
+      throw new GraphQLError("You must be logged in", {
+        extensions: {
+          code: "FORBIDDEN",
+          http: { status: 403 },
+        },
+      });
+
+    return await prisma.client.findMany({
+      where: {
+        creatorId: user.id,
+      },
       include: {
         contacts: true,
-        Project: true,
       },
-    }),
+    });
+  },
 
   getClient: async (
     obj: any,

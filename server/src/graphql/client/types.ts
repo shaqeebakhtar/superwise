@@ -27,7 +27,6 @@ export const clientTypes = `#graphql
     id: String!
     organization: String!
     contacts: [Contact]
-    projects: [Project]
     }
 
     type Query{

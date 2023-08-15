@@ -18,6 +18,7 @@ export const clientMutation = {
     const client = await prisma.client.create({
       data: {
         organization,
+        creatorId: user.id,
       },
     });
 
